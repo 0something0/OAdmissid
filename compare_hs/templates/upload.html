@@ -1,0 +1,10 @@
+<!--form to upload an image and a text-->
+<form method="POST" action="." enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image">
+    <input type="highschool" name="highschool" placeholder="Your high school...">
+    <input type="college" name="college" placeholder="Which college is this...">
+    <input type="submit" value="Submit">
+</form>
+
+<!--show file to be uploaded-->

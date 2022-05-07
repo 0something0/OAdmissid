@@ -1,0 +1,11 @@
+<!--Form to search for certain university and highschool -->
+<form method="POST" action=".">
+    {% csrf_token %}
+    <input type="text" name="highschool" placeholder="highschool">
+    <input type="text" name="college" placeholder="college">
+    <input type="submit" value="Submit">
+    {% for entry in results %}
+        <p>Applying to {{entry.college}} from {{entry.highschool}}</p>
+        <img src="{{ entry.image.url }}" alt="{{ entry.name }}">
+    {% endfor %}    
+</form>
