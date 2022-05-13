@@ -1,5 +1,5 @@
 """
-ASGI config for compare_highschool project.
+ASGI config for hs_inequality project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'compare_highschool.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hs_inequality.settings')
 
 application = get_asgi_application()
