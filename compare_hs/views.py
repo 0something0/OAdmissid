@@ -25,9 +25,9 @@ def index(request):
         except HSAdmissions.DoesNotExist:
             pass            
 
-        return render(request, 'search.html', context)
+        return render(request, 'compare_hs/search.html', context)
  
-    return render(request, 'search.html')
+    return render(request, 'compare_hs/search.html')
 
     #return HttpResponse("Hello, world. You're at the polls index.")
 
@@ -41,7 +41,7 @@ def upload(request):
         college = request.POST['college']
         HSAdmissions.objects.create(image=image, highschool=highschool, college=college)
 
-    return render(request, 'upload.html')
+    return render(request, 'compare_hs/upload.html')
 
 
 
