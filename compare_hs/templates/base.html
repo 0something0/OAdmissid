@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        /*can't be bothered to learn how to distribute static content for now*/
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:  #001000;
+            color: #cbd5e2;
+            margin-top: 0%;
+        }
+        a { /*links*/
+            font-weight: bold;
+            color: inherit;
+        }
+        ul { /*lists*/
+            margin: 0px;
+            padding: 0px;
+            padding-left: 1em;
+        }
+        p, h1 { /*text elements*/
+            margin: 5px;
+            padding: 0px;
+        }
+
+        #grid {
+
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            grid-auto-flow: column;
+            row-gap: 2vw;
+            column-gap: 10vh;
+
+            
+            width: 95vw;
+            height: 95vh; /*setting to 100 causes overflow for some reason*/
+            margin: 0 auto;
+
+        }
+
+        /*primary color - important areas*/
+        .emphasis {
+            background-color: #263031;
+            padding: 10px;
+        }
+
+        #title {
+            grid-row-start: 1;
+            grid-column-start: 2;
+
+            overflow:hidden;
+            position: relative;
+            right: 43%;
+            max-height: 100%;
+        }
+
+        /*center ID content*/
+        #content {
+            grid-row-start: 2;
+            grid-column-start: 2;
+        }
+
+        /*menu specific settings*/
+        #menu {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            width: 120px;
+        }
+        #menu a {
+            margin: 0.5em;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="grid">
+        <div id="title" class="emphasis">
+            <h1>The HS Inequality Project</h1>
+        </div>
+        <div id="menu" class="emphasis"><ul>
+
+            <li><a href="/index"	>Home	</a></li>
+            <li><a href="/search"	>Compare</a></li>
+            <li><a href="/upload"	>Upload	</a></li>
+            <li><a href="/accounts/login"	>Login	</a></li>
+            <li><a href="/accounts/register"	>Register</a></li>
+            <li><a href="/accounts/login"	>Account</a></li>
+            <li><a href="about"	>About	</a></li>
+        </ul></div>
+
+        <div id="content" class="emphasis">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+
+
+</body>

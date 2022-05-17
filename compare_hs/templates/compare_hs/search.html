@@ -1,4 +1,9 @@
 <!--Form to search for certain university and highschool -->
+
+{% extends "../base.html" %}
+
+{% block content %}
+<p>See how your high school stacks up against others...</p>
 <form method="POST" action=".">
     {% csrf_token %}
     <input type="text" name="highschool" placeholder="highschool">
@@ -9,3 +14,4 @@
         <img src="{{ entry.image.url }}" alt="{{ entry.name }}">
     {% endfor %}    
 </form>
+{% endblock %}
